@@ -8,12 +8,9 @@ let day = Math.floor(value / (1000 * 60 * 60 * 24));
 let month = Math.floor(value / (1000 * 60 * 60 * 24 * 30.4375));
 let year = Math.floor(value / (1000 * 60 * 60 * 24 * 365.25));
 
-console.log(value);
-
 document.getElementById("days").textContent = day.toString();
 document.getElementById("months").textContent = month.toString();
 document.getElementById("years").textContent = year.toString();
-
 
 let musicPlayer = document.querySelector(".music-container");
 let togglePlayer = document.querySelector(".toggle-player");
@@ -56,7 +53,6 @@ let soundBarsLottie = bodymovin.loadAnimation({
     autoPLay: false,
     path: "https://lottie.host/9ec12a7e-e429-453a-9f22-a2af1dcb4dca/2zeuy4rwtP.json",
 });
-
 
 let trackList = [
     {
@@ -141,3 +137,18 @@ function prevTrack(){
         playTrack();
     }
 }
+
+// Envelope Animation Code
+
+document.addEventListener("DOMContentLoaded", function () {
+    const heart = document.querySelector(".heart");
+    const envelope = document.querySelector(".envelope");
+
+    heart.addEventListener("click", function () {
+        envelope.classList.toggle("open");
+    });
+});
+document.querySelector(".heart-button").addEventListener("click", function() {
+  document.querySelector(".envelope > .letter").classList.toggle("open");
+});
+
